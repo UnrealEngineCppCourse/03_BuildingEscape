@@ -6,13 +6,13 @@
 */Saved
 */Intermediate
 */DerivedDataCache
-BuildingEscape/Content/StarterContent
 */.vs
+BuildingEscape/Content/StarterContent
 
 ######################
 # VS Generated Files #
 ######################
-*.VC.db
-*.VC.db-shm
-*.VC.db-wal
+*.db
+*.db-shm
+*.db-wal
 *.suo
