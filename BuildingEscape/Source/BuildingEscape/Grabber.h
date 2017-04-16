@@ -28,4 +28,8 @@ private:
 	FRotator PlayerViewPointRotation;
 	FVector LineTraceEnd;
 	float Reach = 100.0f;
+	FCollisionObjectQueryParams PhysicsBodyQueryParams = FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody);
+	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("")), false, GetOwner());
+	FHitResult Hit;
+	AActor* ActorHit;
 };

@@ -28,12 +28,20 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// Get player view point for this tick
+	/// Get player view point for this tick
 	GetWorld()->GetFirstPlayerController()->GetActorEyesViewPoint(PlayerViewPointLocation, PlayerViewPointRotation);
 
-	// Draw a red trace in the world to visualize
+	/// Draw a red trace in the world to visualize
 	LineTraceEnd = PlayerViewPointLocation + PlayerViewPointRotation.Vector() * Reach;
 	DrawDebugLine(GetWorld(), PlayerViewPointLocation, LineTraceEnd, FColor(255, 0, 0), false, 0.0f, 0.0f, 10.0f);
 
+	/// Line trace (AKA ray-cast) out to reach distance
+	GetWorld()->LineTraceSingleByObjectType(Hit, PlayerViewPointLocation, LineTraceEnd, PhysicsBodyQueryParams, TraceParams);
+
+	/// See what we hit
+	ActorHit = Hit.GetActor();
+	if (ActorHit) {
+		UE_LOG(LogTemp, Warning, TEXT("Ray trace hit %s."), *ActorHit->GetName());
+	}
 }
 
