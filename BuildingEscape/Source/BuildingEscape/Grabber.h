@@ -31,5 +31,6 @@ private:
 	FCollisionObjectQueryParams PhysicsBodyQueryParams = FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody);
 	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("")), false, GetOwner());
 	FHitResult Hit;
-	AActor* ActorHit;
+	AActor* ActorHit = nullptr;
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 };
