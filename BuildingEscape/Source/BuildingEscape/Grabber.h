@@ -33,4 +33,20 @@ private:
 	FHitResult Hit;
 	AActor* ActorHit = nullptr;
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* InputComponent = nullptr;
+
+	// Ray-cast and grab what's in reach
+	void Grab();
+	
+	// Called when grab is released
+	void Release();
+
+	// Finds attached physics handle
+	void FindPhysicsHandleComponent();
+	
+	// Setup attached input component
+	void SetupInputComponent();
+
+	// Return hit for
+	const FHitResult GetFirstPhysicsBodyInReach();
 };
