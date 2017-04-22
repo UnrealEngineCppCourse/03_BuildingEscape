@@ -16,6 +16,8 @@ BuildingEscape/Content/StarterContent
 *.db-shm
 *.db-wal
 *.suo
+*.sln
+*.VC.opendb
 BuildingEscape/.vs/BuildingEscape/v15/Solution.VC.db
 BuildingEscape/.vs/BuildingEscape/v15/Solution.VC.db-wal
 BuildingEscape/.vs/BuildingEscape/v15/Solution.VC.db-shm
