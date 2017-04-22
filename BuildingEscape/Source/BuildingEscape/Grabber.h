@@ -24,14 +24,9 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-	FVector PlayerViewPointLocation;
-	FRotator PlayerViewPointRotation;
-	FVector LineTraceEnd;
+	
 	float Reach = 100.0f;
-	FCollisionObjectQueryParams PhysicsBodyQueryParams = FCollisionObjectQueryParams(ECollisionChannel::ECC_PhysicsBody);
-	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("")), false, GetOwner());
-	FHitResult Hit;
-	AActor* ActorHit = nullptr;
+	
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 	UInputComponent* InputComponent = nullptr;
 
@@ -49,4 +44,10 @@ private:
 
 	// Return hit for
 	const FHitResult GetFirstPhysicsBodyInReach();
+
+	//Returns current start of reach line
+	FVector GetReachLineStart();
+
+	//Returns current end of reach line
+	FVector GetReachLineEnd();
 };
